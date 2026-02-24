@@ -1,3 +1,12 @@
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+
 export default function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  const [cartQuantity, setCartQuantity] = useState(0);
+
+  return (
+    <div className="relative min-h-screen bg-white">
+      <Navbar cartCount={cartQuantity} />
+    </div>
+  );
 }
