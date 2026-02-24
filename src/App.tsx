@@ -44,7 +44,7 @@ export default function App() {
         <div>
           <ImageGallery
             selectedIndex={selectedImage}
-            onSelectedImage={setSelectedImage}
+            onSelectImage={setSelectedImage}
             onImageClick={handleImageClick}
           />
         </div>
