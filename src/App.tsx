@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import CartDropdown from "./components/CartDropdown";
 import ImageGallery from "./components/ImageGallery";
+import ProductInfo from "./components/ProductInfo";
 
 export default function App() {
   const [quantity, setQuantity] = useState(0);
@@ -46,6 +47,13 @@ export default function App() {
             selectedIndex={selectedImage}
             onSelectImage={setSelectedImage}
             onImageClick={handleImageClick}
+          />
+
+          <ProductInfo
+            quantity={quantity}
+            onIncrement={handleIncrement}
+            onDecrement={handleDecrement}
+            onAddToCart={handleAddToCart}
           />
         </div>
       </main>
