@@ -28,6 +28,14 @@ export default function App() {
     }
   }
 
+  function handleIncrement() {
+    setQuantity((prev) => Math.min(prev + 1, 10));
+  }
+
+  function handleDecrement() {
+    setQuantity((prev) => Math.max(prev - 1, 0));
+  }
+
   return (
     <div className="relative min-h-screen bg-white">
       <Navbar
