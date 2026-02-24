@@ -1,4 +1,3 @@
-// import { link } from "fs";
 import logo from "../assets/logo.svg";
 import cartIcon from "../assets/icon-cart.svg";
 import navAvatar from "../assets/image-avatar.png";
@@ -17,6 +16,7 @@ export default function Navbar({ cartCount, onCartClick }: NavbarProps) {
             <img src={logo} alt="logo" />
           </span>
 
+          {/* Navigation links */}
           <div className="hidden md:flex items-center gap-8">
             {["Collections", "Men", "Women", "About", "Contact"].map((link) => (
               <a
