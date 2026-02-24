@@ -1,11 +1,14 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import CartDropdown from "./components/CartDropdown";
+import ImageGallery from "./components/ImageGallery";
 
 export default function App() {
   const [quantity, setQuantity] = useState(0);
   const [cartQuantity, setCartQuantity] = useState(0);
   const [cartOpen, setCartOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   function handleAddToCart() {
     if (quantity > 0) {
@@ -16,6 +19,12 @@ export default function App() {
 
   function handleDeleteFromCart() {
     setCartQuantity(0);
+  }
+
+  function handleImageClick() {
+    if (window.innerWidth >= 768) {
+      setLightboxOpen(true);
+    }
   }
 
   return (
@@ -30,6 +39,16 @@ export default function App() {
         quantity={cartQuantity}
         onDelete={handleDeleteFromCart}
       />
+
+      <main>
+        <div>
+          <ImageGallery
+            selectedIndex={selectedImage}
+            onSelectedImage={setSelectedImage}
+            onImageClick={handleImageClick}
+          />
+        </div>
+      </main>
     </div>
   );
 }
