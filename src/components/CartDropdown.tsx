@@ -44,6 +44,10 @@ export default function CartDropdownProps({
               <img src={deleteIcon} alt="delete icon" />
             </button>
           </div>
+
+          <button className="w-full mt-6 bg-orange-500 hover:bg-orange-600 active:scale-[0.98] text-white font-bold py-4 rounded-xl transition-all">
+            Checkout
+          </button>
         </div>
       )}
     </div>
