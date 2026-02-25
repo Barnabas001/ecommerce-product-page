@@ -65,6 +65,14 @@ export default function App() {
           />
         </div>
       </main>
+
+      {/* Click outside cart to close it */}
+      {cartOpen && (
+        <div
+          className="fixed inset-0 z-40"
+          onClick={() => setCartOpen(false)}
+        />
+      )}
     </div>
   );
 }
