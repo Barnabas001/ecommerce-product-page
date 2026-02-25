@@ -4,6 +4,7 @@ import CartDropdown from "./components/CartDropdown";
 import ImageGallery from "./components/ImageGallery";
 import ProductInfo from "./components/ProductInfo";
 import MobileMenu from "./components/MobileMenu";
+import Lightbox from "./components/Lightbox";
 
 export default function App() {
   const [quantity, setQuantity] = useState(0);
@@ -52,6 +53,13 @@ export default function App() {
       />
 
       <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+
+      <Lightbox
+        isOpen={lightboxOpen}
+        selectedIndex={selectedImage}
+        onSelectedImage={setSelectedImage}
+        onClose={() => setLightboxOpen(false)}
+      />
 
       <main className="max-w-6xl mx-auto px-6 py-16">
         <div className="flex flex-col md:flex-row gap-16 items-center">
