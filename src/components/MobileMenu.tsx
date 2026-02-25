@@ -12,10 +12,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <div className="fixed inset-0 z-50 flex">
       <div className="w-64 bg-white h-full shadow-2xl flex flex-col p-8 gap-8">
         {/* Close btn */}
-        <button
-          onClick={onClose}
-          //   className="self-start text-gray-500 hover:text-gray-900"
-        >
+        <button onClick={onClose}>
           <img src={closeBtn} alt="Close btn" />
         </button>
 
