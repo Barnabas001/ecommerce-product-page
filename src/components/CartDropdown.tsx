@@ -21,6 +21,18 @@ export default function CartDropdownProps({
       <div>
         <h2>Cart</h2>
       </div>
+
+      {!hasItems ? (
+        <div>
+          <p>Your cart is empty.</p>
+        </div>
+      ) : (
+        <div>
+          <div>
+            <img src={product.images[0].thumbnail} alt={product.name} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
