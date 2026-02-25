@@ -32,12 +32,6 @@ export default function ImageGallery({
           className="w-full h-full object-cover"
         />
 
-        <div className="hidden md:flex absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity items-center justify-center">
-          <span className="bg-white text-gray-800 text-sm font-bold px-4 py-2 rounded-full shadow">
-            🔍 Click to zoom
-          </span>
-        </div>
-
         <button
           onClick={(e) => {
             e.stopPropagation();
