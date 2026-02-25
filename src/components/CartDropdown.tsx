@@ -18,16 +18,18 @@ export default function CartDropdownProps({
   const hasItems = quantity > 0;
 
   return (
-    <div>
-      <div>
-        <h2>Cart</h2>
+    <div className="absolute rigth-4 md:right-12 top-20 w-88 bg-white rounded-2xl shadow-2xl border boeder-gray-100 z-50 overflow-hidden">
+      <div className="px-6 py-5 border-b border-gray-100">
+        <h2 className="font-black text-gray-900 text-lg">Cart</h2>
       </div>
 
       {!hasItems ? (
-        <div>
-          <p>Your cart is empty.</p>
+        //EMPTY STATE
+        <div className="py-10 text-center">
+          <p className="text-gray-400 font-medium">Your cart is empty.</p>
         </div>
       ) : (
+        //FILLED STATE
         <div>
           <div>
             <img src={product.images[0].thumbnail} alt={product.name} />
