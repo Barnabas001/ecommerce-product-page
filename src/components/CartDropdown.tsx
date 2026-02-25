@@ -1,4 +1,5 @@
 import { product } from "../data/product";
+import deleteIcon from "../assets/icon-delete.svg";
 
 type CartDropdownProps = {
   isOpen: boolean;
@@ -30,6 +31,18 @@ export default function CartDropdownProps({
         <div>
           <div>
             <img src={product.images[0].thumbnail} alt={product.name} />
+
+            <div>
+              <p className="text-gray-600 text-sm truncate">{product.name}</p>
+              <p>
+                ${product.price.toFixed(2)} × {quantity} <span>${total}</span>
+              </p>
+            </div>
+
+            {/* Delete button */}
+            <button>
+              <img src={deleteIcon} alt="delete icon" />
+            </button>
           </div>
         </div>
       )}
