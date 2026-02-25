@@ -30,19 +30,29 @@ export default function CartDropdownProps({
         </div>
       ) : (
         //FILLED STATE
-        <div>
-          <div>
-            <img src={product.images[0].thumbnail} alt={product.name} />
+        <div className="p-6">
+          <div className="flex items-center gap-4">
+            <img
+              src={product.images[0].thumbnail}
+              alt={product.name}
+              className="w-14 h-14 rounded-xl object-cover shrink-0"
+            />
 
-            <div>
+            {/* Details */}
+            <div className="flex-1 min-w-0">
               <p className="text-gray-600 text-sm truncate">{product.name}</p>
-              <p>
-                ${product.price.toFixed(2)} × {quantity} <span>${total}</span>
+              <p className="text-gray-600 text-sm mt-0.5">
+                ${product.price.toFixed(2)} × {quantity}{" "}
+                <span className="font-black text-gray-900">${total}</span>
               </p>
             </div>
 
             {/* Delete button */}
-            <button>
+            <button
+              onClick={onDelete}
+              className="text-gray-400 hover:text-red-500 transition-colors shrink-0"
+              aria-label="Remove from cart"
+            >
               <img src={deleteIcon} alt="delete icon" />
             </button>
           </div>
