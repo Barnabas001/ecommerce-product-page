@@ -57,7 +57,7 @@ export default function App() {
       <Lightbox
         isOpen={lightboxOpen}
         selectedIndex={selectedImage}
-        onSelectedImage={setSelectedImage}
+        onSelectImage={setSelectedImage}
         onClose={() => setLightboxOpen(false)}
       />
 

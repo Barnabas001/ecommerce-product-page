@@ -6,7 +6,7 @@ import nextBnn from "../assets/icon-next.svg";
 type LightboxProps = {
   isOpen: boolean;
   selectedIndex: number;
-  onSelectedImage: (index: number) => void;
+  onSelectImage: (index: number) => void;
   onClose: () => void;
 };
 
@@ -59,7 +59,32 @@ export default function Lightbox({
         >
           <img src={nextBnn} alt="next button" />
         </button>
+
+        <div>
+          {images.map((image, index) => (
+            <button
+              key={image.id}
+              onClick={() => onSelectImage(index)}
+              className={`
+                w-16 h-16 rounded-xl overflow-hidden shrink-0 transition-all
+                ${
+                  index === selectedIndex
+                    ? "ring-2 ring-orange-500 opacity-50"
+                    : "hover:opacity-75"
+                }
+              `}
+            >
+              <img
+                src={image.thumbnail}
+                alt={`Thumbnail ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </button>
+          ))}
+        </div>
       </div>
+
+      <div className="absolute inset-0 -z-10" onClick={onClose} />
     </div>
   );
 }
