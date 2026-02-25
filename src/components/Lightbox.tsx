@@ -29,12 +29,18 @@ export default function Lightbox({
         className="relative w-full max-w-md"
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          onClick={onClose}
-          className="absolute -top-12 right-0 text-orange-500 hover:text-white transition-colors"
-        >
+        <button onClick={onClose}>
           <img src={closeIcon} alt="Close icon" />
         </button>
+
+        {/* Main image */}
+        <div className="aspect-square rounded-2xl overflow-hidden bg-orange-50">
+          <img
+            src={currentImage.src}
+            alt={`Product view ${selectedIndex + 1}`}
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </div>
   );
