@@ -1,5 +1,7 @@
-import product from "../data/product";
+import { product } from "../data/product";
 import closeIcon from "../assets/icon-close.svg";
+import previousBnn from "../assets/icon-previous.svg";
+import nextBnn from "../assets/icon-next.svg";
 
 type LightboxProps = {
   isOpen: boolean;
@@ -41,6 +43,22 @@ export default function Lightbox({
             className="w-full h-full object-cover"
           />
         </div>
+
+        <button
+          onClick={goToPrev}
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-14 h-14 bg-white rounded-full shadow-xl flex items-center justify-center hover:scale-110 transition-transform text-xl font-bold text-gray-800"
+          aria-label="Previous image"
+        >
+          <img src={previousBnn} alt="previous button" />
+        </button>
+
+        <button
+          onClick={goToNext}
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-14 h-14 bg-white rounded-full shadow-xl flex items-center justify-center hover:scale-110 transition-transform text-xl font-bold text-gray-800"
+          aria-label="Next image"
+        >
+          <img src={nextBnn} alt="next button" />
+        </button>
       </div>
     </div>
   );
