@@ -51,7 +51,7 @@ export default function App() {
         onDelete={handleDeleteFromCart}
       />
 
-      <MobileMenu isOpen={menuOpen} />
+      <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
 
       <main className="max-w-6xl mx-auto px-6 py-16">
         <div className="flex flex-col md:flex-row gap-16 items-center">
