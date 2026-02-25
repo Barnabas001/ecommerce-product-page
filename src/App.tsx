@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import CartDropdown from "./components/CartDropdown";
 import ImageGallery from "./components/ImageGallery";
 import ProductInfo from "./components/ProductInfo";
+import MobileMenu from "./components/MobileMenu";
 
 export default function App() {
   const [quantity, setQuantity] = useState(0);
@@ -10,6 +11,7 @@ export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   function handleAddToCart() {
     if (quantity > 0) {
@@ -48,6 +50,8 @@ export default function App() {
         quantity={cartQuantity}
         onDelete={handleDeleteFromCart}
       />
+
+      <MobileMenu isOpen={menuOpen} />
 
       <main className="max-w-6xl mx-auto px-6 py-16">
         <div className="flex flex-col md:flex-row gap-16 items-center">
