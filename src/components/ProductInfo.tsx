@@ -17,7 +17,7 @@ export default function ProductInfo({
   onAddToCart,
 }: ProductInfoProps) {
   return (
-    <div>
+    <div className="flex flex-col justify-center py-4 max-w-md">
       <p className="text-orange-500 font-bold tracking-widest text-sm uppercase mb-4">
         {product.brand}
       </p>

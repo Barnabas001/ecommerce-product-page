@@ -49,8 +49,8 @@ export default function App() {
         onDelete={handleDeleteFromCart}
       />
 
-      <main>
-        <div>
+      <main className="max-w-6xl mx-auto px-6 py-16">
+        <div className="flex flex-col md:flex-row gap-16 items-center">
           <ImageGallery
             selectedIndex={selectedImage}
             onSelectImage={setSelectedImage}
